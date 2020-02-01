@@ -3,7 +3,9 @@
 ; https://www.autohotkey.com/boards/viewtopic.php?f=6&t=26947&p=139114
 
 win_mozTab(TabNum := 1) {
+  IfWinNotExist, ahk_class MozillaWindowClass
+    Run, C:\Program Files\Mozilla Firefox\firefox.exe
   WinActivate ahk_class MozillaWindowClass
-  sleep 10
+  WinWaitActive ahk_class MozillaWindowClass
   Send ^%TabNum%
 }
