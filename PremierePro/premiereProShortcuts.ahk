@@ -1,0 +1,36 @@
+; Adobe Programme erkennen Maustaste 4 & 5 nicht, darum belege ich sie mit anderen Tasten.
+; Jaja, ich weiß. Die Datei heißt "premiereProShortcuts" und nicht "creativeCloudShortcuts".
+#IfWinActive ahk_class audition13 ; Audition
+XButton2::Del
+XButton1::F5
+#If
+
+
+#IfWinActive ahk_class AE_CApplication_17.0 ; After Effects
+XButton2::Del
+XButton1::F5
+#If
+
+
+#IfWinActive ahk_class Premiere Pro ; Premiere Pro
+
+XButton2::Del
+XButton1::F5
+
+; (G1) focus effect-window's searchbox
+F13::
+Send, +7 ; default Premiere shortcut: "Focus Effects Window"
+Send, +f ; default Premiere shortcut: "Focus Effects Windows Searchbox and Select the Content"
+return
+
+; (G2) Reverse selected Clips
+F14::pp_reverseClips()
+
+; (G3) Lock Horizontal Mouse Axys for better Bézier keyframe handling
+F15::win_lockMouseY(unlockKey:="F15")
+
+; (G4) easy ease in and out
+F16::pp_easyEase()
+return
+
+#If
