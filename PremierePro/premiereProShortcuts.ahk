@@ -17,8 +17,6 @@ XButton1::F5
 XButton2::Del
 XButton1::F5
 
-Pause::win_clickImage("effectLabel_Zuschneiden.png")
-
 ; (G1) focus effect-window's searchbox
 F13::
 {
