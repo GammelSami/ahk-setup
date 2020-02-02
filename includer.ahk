@@ -8,6 +8,7 @@
 
 ; functions that could be needed system-wide
 #Include %A_ScriptDir%\Windows\Functions\win_applicationSwitcher.ahk
+#Include %A_ScriptDir%\Windows\Functions\win_clickImage.ahk
 #Include %A_ScriptDir%\Windows\Functions\win_eyedropper.ahk
 #Include %A_ScriptDir%\Windows\Functions\win_lockMouseY.ahk
 #Include %A_ScriptDir%\Windows\Functions\win_mozTab.ahk

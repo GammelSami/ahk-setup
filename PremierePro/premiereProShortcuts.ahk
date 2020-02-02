@@ -12,16 +12,17 @@ XButton1::F5
 #If
 
 
-#IfWinActive ahk_class Premiere Pro ; Premiere Pro
+#IfWinActive ahk_exe Adobe Premiere Pro.exe ; Premiere Pro
 
 XButton2::Del
 XButton1::F5
 
 ; (G1) focus effect-window's searchbox
 F13::
-Send, +7 ; default Premiere shortcut: "Focus Effects Window"
-Send, +f ; default Premiere shortcut: "Focus Effects Windows Searchbox and Select the Content"
-return
+{
+  Send, +7 ; default Premiere shortcut: "Focus Effects Window"
+  Send, +f ; default Premiere shortcut: "Focus Effects Windows Searchbox and Select the Content"
+}
 
 ; (G2) Reverse selected Clips
 F14::pp_reverseClips()
@@ -31,6 +32,14 @@ F15::win_lockMouseY(unlockKey:="F15")
 
 ; (G4) easy ease in and out
 F16::pp_easyEase()
+
+; (G5) Clicks on "Bewegung" in the "Effekteinstellungen" window
+F17::
+{
+  Send, +5
+  win_clickImage("transformButton_Bewegung.png")
+}
+
 return
 
 #If
