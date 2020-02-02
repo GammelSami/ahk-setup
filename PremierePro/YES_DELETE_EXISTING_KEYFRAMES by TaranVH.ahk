@@ -9,11 +9,11 @@ Menu, Tray, Icon, shell32.dll, 303 ; this changes the tray icon to a little chec
 
 DetectHiddenText, On
 
-lol:
-WinWait, Warnung ahk_class #32770 ; german
-sendinput, {enter}
-sleep 1000
-goto lol
+loop {
+  WinWait, Warnung ahk_class #32770 ; german
+  sendinput, {enter}
+  sleep 100
+}
 
 
 ;ignore this code, I'm just keeping it here 'cause I might want it:
