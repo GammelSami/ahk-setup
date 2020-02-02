@@ -5,6 +5,7 @@
 #Include %A_ScriptDir%\PremierePro\Functions\pp_preset.ahk
 #Include %A_ScriptDir%\PremierePro\Functions\pp_easyEase.ahk
 #Include %A_ScriptDir%\PremierePro\Functions\pp_reverseClips.ahk
+#Include %A_ScriptDir%\PremierePro\Functions\pp_instantSkale.ahk
 
 ; functions that could be needed system-wide
 #Include %A_ScriptDir%\Windows\Functions\win_applicationSwitcher.ahk

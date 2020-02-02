@@ -17,29 +17,37 @@ XButton1::F5
 XButton2::Del
 XButton1::F5
 
+Pause::win_clickImage("effectLabel_Zuschneiden.png")
+
 ; (G1) focus effect-window's searchbox
 F13::
 {
   Send, +7 ; default Premiere shortcut: "Focus Effects Window"
   Send, +f ; default Premiere shortcut: "Focus Effects Windows Searchbox and Select the Content"
-}
+} return
 
-; (G2) Reverse selected Clips
-F14::pp_reverseClips()
+; (G2) Lock Horizontal Mouse Axys for better Bézier keyframe handling
+F14::win_lockMouseY(unlockKey:="F14")
 
-; (G3) Lock Horizontal Mouse Axys for better Bézier keyframe handling
-F15::win_lockMouseY(unlockKey:="F15")
+; (G3) easy ease in and out
+F15::pp_easyEase()
 
-; (G4) easy ease in and out
-F16::pp_easyEase()
+; (G4) toggle "Bewegung" and "Deckkraft" in "Effekteinstellungen"
+F16::
+{
+  Send, +5 ; focus Effekteinstellungen
+  win_clickImage("effectLabel_Deckkraft.png", -30)
+  win_clickImage("effectLabel_Bewegung.png", -30)
+} return
 
 ; (G5) Clicks on "Bewegung" in the "Effekteinstellungen" window
 F17::
 {
   Send, +5
-  win_clickImage("transformButton_Bewegung.png")
-}
+  win_clickImage("effectLabel_Bewegung.png")
+} return
 
-return
+; (Corsair User Icon Key) pp_instantScale
+F19::pp_instantScale("F19")
 
 #If
