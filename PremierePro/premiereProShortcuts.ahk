@@ -48,4 +48,7 @@ F17::
 ; (Corsair User Icon Key) pp_instantScale
 F19::pp_instantScale("F19")
 
+; (Corsair Windows Store Icon Key)
+F20::pp_deleteNextMarker()
+
 #If
