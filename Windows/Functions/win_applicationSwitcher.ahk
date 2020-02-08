@@ -30,6 +30,12 @@ win_applicationSwitcher(app) {
       Run, AfterFX.exe
     WinActivate ahk_class "AE_CApplication_17.0"
     Return
+  Case "Terminal":
+    IfWinNotExist, ahk_exe WindowsTerminal.exe
+      Run, wt
+    IfWinNotActive ahk_exe WindowsTerminal.exe
+      WinActivate ahk_exe WindowsTerminal.exe
+    Return
   Case "1Password":
     IfWinNotExist, ahk_class "HwndWrapper[1Password.exe;UI thread;e253d9f5-d4ab-4c33-a43b-fb03aa755b63]"
       Run, 1Password.exe

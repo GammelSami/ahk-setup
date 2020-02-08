@@ -1,5 +1,5 @@
 ; Open Windows Terminal (Alt + T)
-!t::Run %A_ScriptDir%\Setup\Terminal
+!t::win_applicationSwitcher("Terminal")
 
 ;;;;;;;;;; G-Keys ;;;;;;;;;;
 
