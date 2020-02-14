@@ -11,7 +11,7 @@ Pause::win_eyedropper("Pause")
 
 ; (Ctrl + Shift + V) Paste and Go Shortcut in Browsers
 ; Firefox
-#IfWinActive ahk_class MozillaWindowClass
+#IfWinActive ahk_exe firefox.exe
 ^+v:: Send, ^v{Enter}
 #IfWinActive
 ; Chrome
