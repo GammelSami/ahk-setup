@@ -37,10 +37,10 @@ win_applicationSwitcher(app) {
       WinActivate ahk_exe WindowsTerminal.exe
     Return
   Case "1Password":
-    IfWinNotExist, ahk_class "HwndWrapper[1Password.exe;UI thread;e253d9f5-d4ab-4c33-a43b-fb03aa755b63]"
+    IfWinNotExist, ahk_exe 1Password.exe
       Run, 1Password.exe
-    WinActivate ahk_class "HwndWrapper[1Password.exe;UI thread;e253d9f5-d4ab-4c33-a43b-fb03aa755b63]"
-    WinWaitActive 1Password ; looks for the window title
+    WinActivate ahk_exe 1Password.exe
+    WinWaitActive ahk_exe 1Password.exe
     Send ^f
     Return
   Default:
