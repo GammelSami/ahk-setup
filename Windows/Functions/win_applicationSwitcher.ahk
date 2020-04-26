@@ -24,6 +24,7 @@ win_applicationSwitcher(app) {
     IfWinNotExist, ahk_class Premiere Pro
       Run, Adobe Premiere Pro.exe
     WinActivate ahk_class Premiere Pro
+    Send, +2 ; focus source monitor
     Return
   Case "AfterEffects":
     IfWinNotExist, ahk_class "AE_CApplication_17.0"
