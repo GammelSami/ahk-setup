@@ -5,7 +5,8 @@
 #Include %A_ScriptDir%\PremierePro\Functions\pp_preset.ahk
 #Include %A_ScriptDir%\PremierePro\Functions\pp_easyEase.ahk
 #Include %A_ScriptDir%\PremierePro\Functions\pp_reverseClips.ahk
-#Include %A_ScriptDir%\PremierePro\Functions\pp_instantSkale.ahk
+#Include %A_ScriptDir%\PremierePro\Functions\pp_toggleDefaultVFX.ahk
+#Include %A_ScriptDir%\PremierePro\Functions\pp_instantEffectsPropertyChange.ahk
 #Include %A_ScriptDir%\PremierePro\Functions\pp_deleteNextMarker.ahk
 
 ; functions that could be needed system-wide

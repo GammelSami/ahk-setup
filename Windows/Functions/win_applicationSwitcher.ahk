@@ -20,6 +20,11 @@ win_applicationSwitcher(app) {
       Run, WINWORD.EXE
     WinActivate ahk_class OpusApp
     Return
+  Case "Teamspeak":
+    IfWinNotExist, ahk_exe ts3client_win64.exe
+      Run, "C:\Program Files\TeamSpeak 3 Client\ts3client_win64.exe"
+    WinActivate ahk_exe ts3client_win64.exe
+    Return
   Case "PremierePro":
     IfWinNotExist, ahk_class Premiere Pro
       Run, Adobe Premiere Pro.exe
@@ -30,6 +35,11 @@ win_applicationSwitcher(app) {
     IfWinNotExist, ahk_class "AE_CApplication_17.0"
       Run, AfterFX.exe
     WinActivate ahk_class "AE_CApplication_17.0"
+    Return
+  Case "Photoshop":
+    IfWinNotExist, ahk_class Photoshop
+      Run, Photoshop.exe
+    WinActivate ahk_class Photoshop
     Return
   Case "Terminal":
     IfWinNotExist, ahk_exe WindowsTerminal.exe
@@ -42,7 +52,7 @@ win_applicationSwitcher(app) {
       Run, 1Password.exe
     WinActivate ahk_exe 1Password.exe
     WinWaitActive ahk_exe 1Password.exe
-    Send ^f
+    Send ^f ; focus search
     Return
   Default:
     try {
