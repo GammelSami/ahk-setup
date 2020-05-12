@@ -20,6 +20,15 @@ win_applicationSwitcher(app) {
       Run, WINWORD.EXE
     WinActivate ahk_class OpusApp
     Return
+  Case "Thunderbird":
+    IfWinNotExist, ahk_exe thunderbird.exe
+      Run, thunderbird.exe
+    GroupAdd, thunderbirdwindows, ahk_exe thunderbird.exe
+    if WinActive("ahk_exe thunderbird.exe")
+      GroupActivate, thunderbirdwindows, r
+    else
+      WinActivate ahk_exe thunderbird.exe
+    Return
   Case "Teamspeak":
     IfWinNotExist, ahk_exe ts3client_win64.exe
       Run, "C:\Program Files\TeamSpeak 3 Client\ts3client_win64.exe"
