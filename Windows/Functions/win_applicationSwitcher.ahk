@@ -34,6 +34,11 @@ win_applicationSwitcher(app) {
       Run, "C:\Program Files\TeamSpeak 3 Client\ts3client_win64.exe"
     WinActivate ahk_exe ts3client_win64.exe
     Return
+  Case "Discord":
+    IfWinNotExist, ahk_exe Discord.exe
+      Run, "C:\Users\Sam\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord Inc\Discord.lnk"
+    WinActivate ahk_exe Discord.exe
+    Return
   Case "PremierePro":
     IfWinNotExist, ahk_class Premiere Pro
       Run, Adobe Premiere Pro.exe
