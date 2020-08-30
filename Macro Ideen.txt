@@ -1,0 +1,10 @@
+-Roter Pfeil
+-Einstellungsebene mit CropZoom-Preset
+-Einstellungsebene mit Transform-Effekt
+-Ebenen Verknüpfen			(+V)
+-Todoist Tab öffnen			(F17 / G5)
+-Bewegung + Deckkraft ausklappen
+
+---------------------------------------
+
+-Gaußscher Weichzeichner
