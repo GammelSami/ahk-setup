@@ -15,3 +15,6 @@
 #Include %A_ScriptDir%\Windows\Functions\win_eyedropper.ahk
 #Include %A_ScriptDir%\Windows\Functions\win_lockMouseY.ahk
 #Include %A_ScriptDir%\Windows\Functions\win_mozTab.ahk
+
+; functions for davinci resolve
+#Include %A_ScriptDir%\DavinciResolve\davinciResolveShortcuts.ahk
