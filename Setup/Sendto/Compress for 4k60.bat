@@ -17,7 +17,7 @@ exit
 :: define function
 :ffmpeg
 SETLOCAL
-ffmpeg -i "%~1" -map 0:v -map 0:a -c:v hevc_nvenc -filter:v fps=fps=60 -preset:v slow -rc vbr_hq -rc-lookahead 250 -b:v 18M -2pass 1 -pix_fmt yuv420p -c:a copy "%~2"
+ffmpeg -i "%~1" -map 0:v -map 0:a -c:v hevc_nvenc -filter:v fps=fps=60 -preset:v slow -rc vbr -rc-lookahead 250 -b:v 18M -2pass 1 -pix_fmt yuv420p -c:a copy "%~2"
 :: delete or rename input files
 if /I "%delete_uncompressed_files%" EQU "0" (
   ren "%~1" "%~n1 - uncompressed.mp4"
