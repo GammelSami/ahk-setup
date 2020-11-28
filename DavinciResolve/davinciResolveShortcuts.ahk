@@ -7,3 +7,5 @@ F13::
   Click, Middle, 20, 160
   MouseMove, mx, my
 } return
+
+#If
