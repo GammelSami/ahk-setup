@@ -2,6 +2,8 @@
 
 ; ripple delete on mouse 5
 XButton2::Del
+; fast forward on mouse 4
+XButton1::+L
 
 ; focus left panel (Media Pool)
 F13::
