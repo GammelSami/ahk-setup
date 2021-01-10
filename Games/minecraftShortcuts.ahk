@@ -1,4 +1,4 @@
-#IfWinActive("ahk_exe javaw.exe")
+#IfWinActive ahk_exe javaw.exe
 
 F17::
 Send {t}
