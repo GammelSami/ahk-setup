@@ -10,3 +10,4 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 #Include %A_ScriptDir%\Windows\windowsShortcuts.ahk
 #Include %A_ScriptDir%\DavinciResolve\davinciResolveShortcuts.ahk
 #Include %A_ScriptDir%\PremierePro\premiereProShortcuts.ahk
+#Include %A_ScriptDir%\Games\minecraftShortcuts.ahk
