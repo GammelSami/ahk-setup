@@ -3,11 +3,11 @@
 
 #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
+#SingleInstance
 #WinActivateForce
 
-; include includer to include all functions that needs to be included
-#Include %A_ScriptDir%\includer.ahk
-
+; include functions
+#Include %A_ScriptDir%\includeFunctions.ahk
 
 try {
 
@@ -19,7 +19,6 @@ try {
   ToolTip, e
   ExitApp
 }
-
 
 ; ---------- Helper Snippets ---------- ;
 ; would not be neccesary if the stream deck would have an AHK action

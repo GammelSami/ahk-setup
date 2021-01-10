@@ -4,7 +4,7 @@
 pp_easyEase() {
 
   bigdelay = 300 ; because Premiere's context menu has special needs; increase this if you have a slower pc
-  normaldelay = 1
+  normaldelay = 10
 
   ;This will click on the necessary menu items for you
   ;all you have to do is hover the cursor over a keyframe (or selected keyframes) in the Effect Controls panel, and hit the button.
