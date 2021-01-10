@@ -17,6 +17,22 @@ XButton1::F5
 XButton2::Del
 XButton1::F5
 
+; fast shuttle with arrow keys
++Left::
+While GetKeyState("Left", "P")
+{
+    Send, +{Left}
+    Sleep, 1
+}
+return
+
++Right::
+While GetKeyState("Right", "P")
+{
+    Send, +{Right}
+    Sleep, 1
+}
+return
 
 ; G-Keys
 
