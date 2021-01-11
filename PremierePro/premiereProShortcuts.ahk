@@ -18,7 +18,7 @@ XButton2::Del
 XButton1::F5
 
 ; fast shuttle with arrow keys
-+Left::
+^Left::
 While GetKeyState("Left", "P")
 {
     Send, +{Left}
@@ -26,7 +26,7 @@ While GetKeyState("Left", "P")
 }
 return
 
-+Right::
+^Right::
 While GetKeyState("Right", "P")
 {
     Send, +{Right}
