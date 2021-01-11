@@ -1,3 +1,6 @@
 [submodule "HotkeylessAHK"]
 	path = HotkeylessAHK
 	url = https://github.com/sebinside/HotkeylessAHK.git
+[submodule "AHK2PremiereCEP"]
+	path = AHK2PremiereCEP
+	url = https://github.com/sebinside/AHK2PremiereCEP
