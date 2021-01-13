@@ -9,6 +9,7 @@
 #Include %A_ScriptDir%\PremierePro\Functions\pp_toggleDefaultVFX.ahk
 #Include %A_ScriptDir%\PremierePro\Functions\pp_instantEffectsPropertyChange.ahk
 #Include %A_ScriptDir%\PremierePro\Functions\pp_deleteNextMarker.ahk
+#Include %A_ScriptDir%\PremierePro\Functions\pp_arrowFastShuttle.ahk
 
 ; system-wide
 #Include %A_ScriptDir%\Windows\Functions\win_applicationSwitcher.ahk
