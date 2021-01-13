@@ -45,6 +45,7 @@ F16::
 F17::
 {
   Send, +5
+  Sleep, 100
   win_clickImage("effectLabel_Bewegung.png")
 } return
 
