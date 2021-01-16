@@ -54,9 +54,8 @@ pp_instantEffectsPropertyChange(unlockKey="Esc", property="") {
   DllCall("SystemParametersInfo", UInt, 0x71, UInt, 0, UInt, 11, UInt, 0)
 
   ; enable mouse input for changing property value
-  ; Sleep, 10
-  ; BlockInput, Off
-  ; BlockInput, MouseMoveOff
+  BlockInput, Off
+  BlockInput, MouseMoveOff
 
   Keywait, %unlockKey%
   Click, Up, Left
