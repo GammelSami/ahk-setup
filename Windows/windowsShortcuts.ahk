@@ -20,3 +20,10 @@ Pause::win_eyedropper("Pause")
     Send, {Enter}
     return
 #If
+
+; generate password / e-mail alias
+!Insert::
+{
+  str := RandStr( 7,1,0 )
+  Send, %str%
+}
