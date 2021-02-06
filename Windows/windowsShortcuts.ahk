@@ -1,6 +1,11 @@
 ; Open Windows Terminal (Alt + T)
 !t::win_applicationSwitcher("Terminal")
 
+;long dash – with altgr and -
+<^>!-::Send, {U+2013}
+;longer dash with shift, altgr and -
++<^>!-::Send, {U+2014}
+
 ;;;;;;;;;; G-Keys ;;;;;;;;;;
 
 ; (G6) Instant Application Switcher Windows Explorer
