@@ -5,6 +5,8 @@
 <^>!-::Send, {U+2013}
 ;longer dash with shift, altgr and -
 +<^>!-::Send, {U+2014}
+;hellip with altgr and .
+<^>!.::Send, {U+2026}
 
 ;;;;;;;;;; G-Keys ;;;;;;;;;;
 
