@@ -7,6 +7,10 @@
 +<^>!-::Send, {U+2014}
 ;hellip with altgr and .
 <^>!.::Send, {U+2026}
+;double dot with shift and numpad period
+NumpadDel::Send, {U+003A}
+;"almost equal to" with shift, altgr and +
++<^>!+::Send, {U+2248}
 
 ;;;;;;;;;; G-Keys ;;;;;;;;;;
 
