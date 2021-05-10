@@ -1,5 +1,7 @@
 ; include librarys
 #Include %A_ScriptDir%\Lib\tooltipStyling.ahk
+#Include %A_ScriptDir%\Lib\RandStr.ahk
+#Include %A_ScriptDir%\Lib\Process_Suspend.ahk
 
 
 ; Premiere Pro
@@ -10,6 +12,7 @@
 #Include %A_ScriptDir%\PremierePro\Functions\pp_instantEffectsPropertyChange.ahk
 #Include %A_ScriptDir%\PremierePro\Functions\pp_deleteNextMarker.ahk
 #Include %A_ScriptDir%\PremierePro\Functions\pp_arrowFastShuttle.ahk
+#Include %A_ScriptDir%\PremierePro\Functions\pp_clipboardLoad.ahk
 
 ; system-wide
 #Include %A_ScriptDir%\Windows\Functions\win_applicationSwitcher.ahk
@@ -18,4 +21,3 @@
 #Include %A_ScriptDir%\Windows\Functions\win_lockMouseY.ahk
 #Include %A_ScriptDir%\Windows\Functions\win_mozTab.ahk
 #Include %A_ScriptDir%\Windows\Functions\win_close.ahk
-#Include %A_ScriptDir%\Lib\RandStr.ahk

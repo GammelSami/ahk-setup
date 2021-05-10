@@ -39,6 +39,11 @@ win_applicationSwitcher(app) {
       Run, "C:\Users\Sam\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord Inc\Discord.lnk"
     WinActivate ahk_exe Discord.exe
     Return
+  Case "WhatsApp":
+    IfWinNotExist, ahk_exe WhatsApp.exe
+      Run, WhatsApp.exe
+    WinActivate ahk_exe WhatsApp.exe
+    Return
   Case "PremierePro":
     IfWinNotExist, ahk_class Premiere Pro
       Run, Adobe Premiere Pro.exe
@@ -65,19 +70,20 @@ win_applicationSwitcher(app) {
   Case "1Password":
     IfWinNotExist, ahk_exe 1Password.exe
       Run, 1Password.exe
-    WinActivate ahk_exe 1Password.exe
+    ;WinActivate ahk_exe 1Password.exe
+    Send, ^+#
     WinWaitActive ahk_exe 1Password.exe
     Send ^f ; focus search
     Return
   Default:
     try {
-      IfWinNotExist, ahk_class %app%
+      IfWinNotExist, ahk_exe %app%
         Run, %app%.exe
-      WinActivate ahk_class %app%
+      WinActivate ahk_exe %app%
       Return
     } catch e {
       tooltip, App %app% not found!
-      Sleep 3000
+      Sleep 5000
       tooltip,
     }
   }
