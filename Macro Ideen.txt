@@ -8,3 +8,8 @@
 ---------------------------------------
 
 -Gaußscher Weichzeichner
+-Pitch Effekt
+-Labels
+
+change audio device
+https://community.adobe.com/t5/premiere-pro/changing-audio-preferences-with-extendscript/td-p/10947574?profile.language=de&page=1

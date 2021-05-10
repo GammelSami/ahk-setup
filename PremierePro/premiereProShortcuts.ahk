@@ -1,6 +1,6 @@
 ; Adobe Programme erkennen Maustaste 4 & 5 nicht, darum belege ich sie mit anderen Tasten.
 ; Jaja, ich weiß. Die Datei heißt "premiereProShortcuts" und nicht "creativeCloudShortcuts".
-#IfWinActive ahk_class audition13 ; Audition
+#IfWinActive ahk_exe Adobe Audition.exe ; Audition
 XButton2::Del
 XButton1::F5
 #If
@@ -15,7 +15,7 @@ XButton1::F5
 #IfWinActive ahk_exe Adobe Premiere Pro.exe ; Premiere Pro
 
 XButton2::Del
-XButton1::F5
+XButton1::Send, LLLL
 
 ; fast shuttle with arrow keys
 ^Left::pp_arrowFastShuttle("Left")
@@ -33,8 +33,18 @@ F13::
 ; Lock Horizontal Mouse Axys for better Bézier keyframe handling
 F14::win_lockMouseY(unlockKey:="F14")
 
-; toggle "Bewegung" and "Deckkraft" in "Effekteinstellungen"
+; click on volume value in effects panel
 F16::
+{
+  Send, +1 ; focus Timeline
+  Send, +5 ; focus Effekteinstellungen
+  Send, {Tab}
+  Send, {Tab}
+  Send, {Tab}
+} return
+
+; toggle "Bewegung" and "Deckkraft" in "Effekteinstellungen"
++F17::
 {
   Send, +5 ; focus Effekteinstellungen
   win_clickImage("effectLabel_Deckkraft.png", -30)
