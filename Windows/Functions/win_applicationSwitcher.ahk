@@ -31,17 +31,17 @@ win_applicationSwitcher(app) {
     Return
   Case "Teamspeak":
     IfWinNotExist, ahk_exe ts3client_win64.exe
-      Run, "C:\Program Files\TeamSpeak 3 Client\ts3client_win64.exe"
+      Run, %PROGRAMFILES%\TeamSpeak 3 Client\ts3client_win64.exe
     WinActivate ahk_exe ts3client_win64.exe
     Return
   Case "Discord":
     IfWinNotExist, ahk_exe Discord.exe
-      Run, "C:\Users\Sam\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord Inc\Discord.lnk"
+      Run, %USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord Inc\Discord.lnk
     WinActivate ahk_exe Discord.exe
     Return
   Case "WhatsApp":
     IfWinNotExist, ahk_exe WhatsApp.exe
-      Run, WhatsApp.exe
+      Run, %A_ScriptDir%\Setup\WhatsApp Desktop.lnk
     WinActivate ahk_exe WhatsApp.exe
     Return
   Case "PremierePro":
