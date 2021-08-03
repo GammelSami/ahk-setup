@@ -14,6 +14,9 @@
 #Include %A_ScriptDir%\PremierePro\Functions\pp_arrowFastShuttle.ahk
 #Include %A_ScriptDir%\PremierePro\Functions\pp_clipboardLoad.ahk
 
+;Photoshop
+#Include %A_ScriptDir%\Photoshop\Functions\ps_zoomToPercentage.ahk
+
 ; system-wide
 #Include %A_ScriptDir%\Windows\Functions\win_applicationSwitcher.ahk
 #Include %A_ScriptDir%\Windows\Functions\win_clickImage.ahk
