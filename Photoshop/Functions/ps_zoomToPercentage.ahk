@@ -1,8 +1,20 @@
 ps_zoomToPercentage(p=10) {
   BlockInput, On
+  CoordMode, Mouse, Screen
+
   Mousegetpos, mx, my
-  Mousemove, 70, 1398, 0
-  Send, {Click, 2}%p%{Enter}
+  Mousemove, 60, 1390, 0
+  Send, {Click, 2}
+  Send, {Click, 2}
+  Sleep, 100
+
+  if (A_CaretY != "")
+  {
+    Send, %p%{Enter}
+  }
+
   Mousemove, mx, my, 0
+
+  CoordMode, Mouse
   BlockInput, Off
 }
