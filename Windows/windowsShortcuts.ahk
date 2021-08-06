@@ -1,6 +1,8 @@
 ; Open Windows Terminal (Alt + T)
 !t::win_applicationSwitcher("Terminal")
 
+;german quotes with shift, altgr and 2
++<^>!2::Send, {U+201E}{U+201C}{Left}
 ;long dash – with altgr and -
 <^>!-::Send, {U+2013}
 ;longer dash with shift, altgr and -
