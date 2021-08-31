@@ -34,6 +34,11 @@ win_applicationSwitcher(app) {
       Run, %PROGRAMFILES%\TeamSpeak 3 Client\ts3client_win64.exe
     WinActivate ahk_exe ts3client_win64.exe
     Return
+  Case "GogGalaxy":
+    IfWinNotExist, ahk_exe GalaxyClient.exe
+      Run, C:\Program Files (x86)\GOG Galaxy\GalaxyClient.exe
+    WinActivate ahk_exe GalaxyClient.exe
+    Return
   Case "Discord":
     IfWinNotExist, ahk_exe Discord.exe
       Run, %USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord Inc\Discord.lnk

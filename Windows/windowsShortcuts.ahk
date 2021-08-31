@@ -1,6 +1,11 @@
 ; Open Windows Terminal (Alt + T)
 !t::win_applicationSwitcher("Terminal")
 
+; Open GOG
+#g::win_applicationSwitcher("GogGalaxy")
+
+;;;;;;;;;; Text Stuff ;;;;;;;;;;
+
 ;german quotes with shift, altgr and 2
 +<^>!2::Send, {U+201E}{U+201C}{Left}
 ;long dash – with altgr and -
