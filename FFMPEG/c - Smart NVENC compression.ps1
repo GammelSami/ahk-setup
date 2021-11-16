@@ -1,8 +1,6 @@
-param($footageType)
-
 $outputFileSuffix = ' - COMPRESSED'
 
-$deleteInputFile = 1
+$deleteInputFile = 0
 $inputFileSuffix = ' - uncompressed'
 $inputFileSuffixFail = ' - not COMPRESSED'
 
