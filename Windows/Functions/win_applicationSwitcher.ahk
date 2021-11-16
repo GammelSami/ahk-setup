@@ -82,9 +82,9 @@ win_applicationSwitcher(app) {
     Return
   Default:
     try {
-      IfWinNotExist, ahk_exe %app%
+      IfWinNotExist, ahk_exe %app%.exe
         Run, %app%.exe
-      WinActivate ahk_exe %app%
+      WinActivate ahk_exe %app%.exe
       Return
     } catch e {
       tooltip, App %app% not found!
