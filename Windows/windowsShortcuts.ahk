@@ -4,6 +4,9 @@
 ; Open GOG
 #g::win_applicationSwitcher("GogGalaxy")
 
+; Open Spotify
+#s::win_applicationSwitcher("Spotify")
+
 ;;;;;;;;;; Text Stuff ;;;;;;;;;;
 
 ;german quotes with shift, altgr and 2
