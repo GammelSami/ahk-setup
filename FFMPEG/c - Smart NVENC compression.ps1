@@ -4,6 +4,8 @@ $deleteInputFile = 0
 $inputFileSuffix = ' - uncompressed'
 $inputFileSuffixFail = ' - not COMPRESSED'
 
+$debug = 0
+
 
 #################
 ### functions ###
@@ -29,8 +31,11 @@ Function Compress-Video {
     [double]$duration = $metadata[3]
     [int]$iframes = $metadata[4]
 
+    # log metadata
+    Write-Host "$width x $height @ $fps i" ($iframes/$duration)'/s' -ForegroundColor White
 
-    # calculate bitrate by metadata
+
+    # calculate bitrate from metadata
 
     # old (trash): [double]$bitrate = [Math]::SQRT($width * $height) * ($fps / 60 + 0.5) * (Log2($iframes/$duration * 8)) / 10
 
@@ -48,6 +53,13 @@ Function Compress-Video {
     # compression with ffmpeg (command by @tuf_Hannes)
     ffmpeg -i "$inputFile" -map 0:v -map 0:a -c:v hevc_nvenc -filter:v fps=fps="$fps" -preset:v slow -rc vbr -rc-lookahead 250 -b:v "$bitrate" -2pass 1 -pix_fmt yuv420p -c:a copy "$outputFile"
     
+    # ffmpeg failed? exit
+    if ($? -eq 0) {
+        $inputFileNewName = $inputFileItem.BaseName + $inputFileSuffixFail + $inputFileItem.Extension
+        Rename-Item -Path "$inputFile" -NewName "$inputFileNewName"
+        Return
+    }
+
     # alternative to ffmpeg: (if using, remove the 'K' from $bitrate)
     # HandBrakeCLI -i "$inputFile" -o test.mp4 -e nvenc_h265 --encoder-preset slow -b "$bitrate" --cfr --all-audio -E copy
 
@@ -100,3 +112,5 @@ ForEach ($path in $args) {
         Compress-Video "$path"
     }
 }
+
+if ($debug -eq 1) { Pause }
