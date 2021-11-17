@@ -47,7 +47,9 @@ Function Compress-Video {
 
     # compression with ffmpeg (command by @tuf_Hannes)
     ffmpeg -i "$inputFile" -map 0:v -map 0:a -c:v hevc_nvenc -filter:v fps=fps="$fps" -preset:v slow -rc vbr -rc-lookahead 250 -b:v "$bitrate" -2pass 1 -pix_fmt yuv420p -c:a copy "$outputFile"
-    #ffmpeg -i "$inputFile" -c copy "$outputFile"
+    
+    # alternative to ffmpeg: (if using, remove the 'K' from $bitrate)
+    # HandBrakeCLI -i "$inputFile" -o test.mp4 -e nvenc_h265 --encoder-preset slow -b "$bitrate" --cfr --all-audio -E copy
 
     $outputFileItem = Get-Item "$outputFile"
 
