@@ -4,6 +4,8 @@ $deleteInputFile = 0
 $inputFileSuffix = ' - uncompressed'
 $inputFileSuffixFail = ' - not COMPRESSED'
 
+$skipAlreadyProcessedFiles = 1
+
 $debug = 0
 
 
@@ -19,6 +21,17 @@ Function Compress-Video {
     $inputFileItem = Get-Item "$inputFile"
     $outputFile = (Split-Path "$inputFile" -Parent) + '\' + $inputFileItem.Basename + $outputFileSuffix + '.mp4'
 
+    # skip file if already processed (determined by name)
+    if ($skipAlreadyProcessedFiles -eq 1) {
+        if ($inputFileItem.Basename -match $outputFileSuffix -or
+            $inputFileItem.Basename -match $inputFileSuffix -or
+            $inputFileItem.Basename -match $inputFileSuffixFail
+        ) {
+        Write-Host "Skipping already processed file! (determined by file name): $inputFile" -ForegroundColor Cyan
+        Return
+        }
+    }
+
     # get metadata of input file
     Write-Host "reading file metadata..." -ForegroundColor Green
     $metadata = ffprobe -v error -select_streams v:0 -count_frames -skip_frame nokey -show_entries stream=width,height,avg_frame_rate,duration,nb_read_frames -of csv=p=0 "$inputFile"
@@ -32,7 +45,7 @@ Function Compress-Video {
     [int]$iframes = $metadata[4]
 
     # log metadata
-    Write-Host "$width x $height @ $fps i" ($iframes/$duration)'/s' -ForegroundColor White
+    Write-Host "$width x $height @ $fps" ($iframes/$duration)'iFrames/s' -ForegroundColor White
 
 
     # calculate bitrate from metadata
