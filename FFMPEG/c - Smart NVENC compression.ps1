@@ -19,7 +19,7 @@ Function Compress-Video {
 
     # get metadata of input file
     Write-Host "reading file metadata..." -ForegroundColor Green
-    $metadata = ffprobe -v error -select_streams v:0 -count_frames -skip_frame nokey -show_entries stream=width,height,r_frame_rate,duration,nb_read_frames -of csv=p=0 "$inputFile"
+    $metadata = ffprobe -v error -select_streams v:0 -count_frames -skip_frame nokey -show_entries stream=width,height,avg_frame_rate,duration,nb_read_frames -of csv=p=0 "$inputFile"
     $metadata = "$metadata" -split ','
 
     [int]$width = $metadata[0]
