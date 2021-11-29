@@ -1,3 +1,21 @@
+# This PowerShell script calculates optimal archiving bitrate for each given video
+# and compresses it in nvenc_h265 fix fps.
+
+# How to use?
+# Right click on selected Files/Folders -> Send to -> [This script]
+
+# Installation:
+# 1. Allow execution of PowerShell scripts: https://superuser.com/a/106363/1149239
+# 2. Create a link to this script (without the -SourceFile) https://stackoverflow.com/a/33807603/9261735
+#    Or use mine: https://github.com/GammelSami/ahk-setup/blob/master/Setup/Sendto/c%20-%20smart%20NVENC%20compression.lnk
+# 3. Put it inside the Sendto folder: Win + R -> shell:sendto
+# 4. Change the settings variables how you like.
+# 5. Share: https://twitter.com/GammelSami/status/1460761863600447496
+
+#################
+### settings ###
+#################
+
 $outputFileSuffix = ' - COMPRESSED'
 
 $deleteInputFile = 0
@@ -65,7 +83,7 @@ Function Compress-Video {
 
     # compression with ffmpeg (command by @tuf_Hannes)
     ffmpeg -i "$inputFile" -map 0:v -map 0:a -c:v hevc_nvenc -filter:v fps=fps="$fps" -preset:v slow -rc vbr -rc-lookahead 250 -b:v "$bitrate" -2pass 1 -pix_fmt yuv420p -c:a copy "$outputFile"
-    
+
     # ffmpeg failed? exit
     if ($? -eq 0) {
         $inputFileNewName = $inputFileItem.BaseName + $inputFileSuffixFail + $inputFileItem.Extension
