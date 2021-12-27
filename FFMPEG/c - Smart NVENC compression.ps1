@@ -18,7 +18,7 @@
 
 $outputFileSuffix = ' - COMPRESSED'
 
-$deleteInputFile = 0
+$trashInputFile = 1
 $inputFileSuffix = ' - uncompressed'
 $inputFileSuffixFail = ' - not COMPRESSED'
 
@@ -107,8 +107,8 @@ Function Compress-Video {
     # set the original creation date for new file
     $outputFileItem.CreationTime = $inputFileItem.CreationTime
 
-    # rename/delete inputFile
-    if ($deleteInputFile -eq 1) {
+    # rename/trash inputFile
+    if ($trashInputFile -eq 1) {
         $shell = new-object -comobject "Shell.Application"
         $item = $shell.Namespace(0).ParseName("$inputFile")
         $item.InvokeVerb("delete")
