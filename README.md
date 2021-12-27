@@ -1,6 +1,6 @@
 
 # ahk-setup
-[Gammel Sami](https://www.youtube.com/GammelSami)'s AutoHotkey Setup. Some Scripts are ~inspired~ stolen from [TaranVH](https://github.com/TaranVH/2nd-keyboard) (Editor at [LinusTechTips](https://www.youtube.com/watch?v=y-eIhBThlrY)) but modified for german PremierePro.
+[Gammel Sami](https://www.youtube.com/GammelSami)'s AutoHotkey Setup. Some Scripts are ~inspired~ stolen from [TaranVH](https://github.com/TaranVH/2nd-keyboard) (Editor at [LinusTechTips](https://www.youtube.com/watch?v=y-eIhBThlrY)) but modified for german PremierePro on WQHD monitor with 100% scaling.
 ## File Structure
 ```bash
 📂Assets
