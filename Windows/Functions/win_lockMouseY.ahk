@@ -1,10 +1,12 @@
 
 ;
-; Lock Horizontal Mouse Axys for better Bézier keyframe handling
+; Locks Horizontal Mouse Axys for better Bézier keyframe handling
 ;
 ; If Premiere would have this feature, such a Script wouldn't be neccesary (plz upvote):
 ; https://adobe-video.uservoice.com/forums/911233-premiere-pro/suggestions/39305383-animation-curve-handle-should-be-locked-vertically
 ;
+; For using this as standalone script, remove the semicolon from line below:
+; F4::win_lockMouseY("F4")
 
 win_lockMouseY(unlockKey="Esc") {
 
