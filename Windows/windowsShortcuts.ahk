@@ -33,7 +33,7 @@ F18::win_applicationSwitcher("Explorer")
 Pause::win_eyedropper("Pause")
 
 ; Fast Open 1Password
-#1::win_applicationSwitcher("1Password")
+#b::win_applicationSwitcher("Bitwarden")
 
 ; (Ctrl + Shift + V) "Paste & Go" Shortcut in Browsers and other Software
 #If WinActive("ahk_exe firefox.exe") or WinActive("ahk_exe chrome.exe") or WinActive("ahk_exe javaw.exe") or WinActive("ahk_exe Discord.exe") or WinActive("ahk_class CabinetWClass")

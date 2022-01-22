@@ -66,19 +66,22 @@ win_applicationSwitcher(app) {
       Run, Photoshop.exe
     WinActivate ahk_class Photoshop
     Return
+  Case "YouTube Music Desktop App":
+    IfWinNotExist, ahk_exe YouTube Music Desktop App.exe
+      Run, C:\Users\Sam\AppData\Local\Programs\youtube-music-desktop-app\YouTube Music Desktop App.exe
+    WinActivate ahk_exe YouTube Music Desktop App.exe
+    Return
   Case "Terminal":
     IfWinNotExist, ahk_exe WindowsTerminal.exe
       Run, wt
     IfWinNotActive ahk_exe WindowsTerminal.exe
       WinActivate ahk_exe WindowsTerminal.exe
     Return
-  Case "1Password":
-    IfWinNotExist, ahk_exe 1Password.exe
-      Run, 1Password.exe
-    ;WinActivate ahk_exe 1Password.exe
-    Send, ^+#
-    WinWaitActive ahk_exe 1Password.exe
-    Send ^f ; focus search
+  Case "Bitwarden":
+    IfWinNotExist, ahk_exe Bitwarden.exe
+      Run, C:\Program Files\Bitwarden\Bitwarden.exe
+    WinWait ahk_exe Bitwarden.exe
+    WinActivate ahk_exe Bitwarden.exe
     Return
   Default:
     try {
