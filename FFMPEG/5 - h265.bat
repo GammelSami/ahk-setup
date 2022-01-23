@@ -19,7 +19,7 @@ exit
 :: define function
 :compress
 SETLOCAL
-HandBrakeCLI -i "%~1" -o "%~2" -e nvenc_h265 --encoder-preset slow -b %bitrate% --cfr --all-audio -E copy
+HandBrakeCLI -i "%~1" -o "%~2" -e nvenc_h265 --encoder-preset slow -b %bitrate% --cfr --all-audio --all-subtitles -E copy
 :: delete or rename input files
 if /I "%trash_uncompressed_files%" EQU "0" (
   ren "%~1" "%~n1 - uncompressed.mp4"
