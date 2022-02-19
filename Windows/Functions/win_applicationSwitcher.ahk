@@ -15,11 +15,6 @@ win_applicationSwitcher(app) {
     else
       WinActivate ahk_class CabinetWClass
     Return
-  Case "Word":
-    IfWinNotExist, ahk_class OpusApp
-      Run, WINWORD.EXE
-    WinActivate ahk_class OpusApp
-    Return
   Case "Thunderbird":
     IfWinNotExist, ahk_exe thunderbird.exe
       Run, thunderbird.exe
@@ -87,6 +82,7 @@ win_applicationSwitcher(app) {
     try {
       IfWinNotExist, ahk_exe %app%.exe
         Run, %app%.exe
+			WinWait ahk_exe %app%.exe
       WinActivate ahk_exe %app%.exe
       Return
     } catch e {
