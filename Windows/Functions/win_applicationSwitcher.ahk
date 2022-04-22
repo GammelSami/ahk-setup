@@ -61,11 +61,29 @@ win_applicationSwitcher(app) {
       Run, Photoshop.exe
     WinActivate ahk_class Photoshop
     Return
-  Case "YouTube Music Desktop App":
-    IfWinNotExist, ahk_exe YouTube Music Desktop App.exe
-      Run, C:\Users\Sam\AppData\Local\Programs\youtube-music-desktop-app\YouTube Music Desktop App.exe
-    WinActivate ahk_exe YouTube Music Desktop App.exe
-    Return
+  Case "YouTube Music":
+		IfWinActive ahk_exe YouTube Music.exe
+		{
+			WinHide, ahk_exe YouTube Music.exe ahk_class Chrome_WidgetWin_1
+			Return
+		}
+		IfWinExist, ahk_exe YouTube Music.exe
+		{
+			WinActivate ahk_class Chrome_WidgetWin_1 ahk_exe YouTube Music.exe
+			Return
+		}
+		Process, Exist, YouTube Music.exe
+		if (%ErrorLevel% = "0")
+		{
+			Run, C:\Users\Sam\AppData\Local\Programs\youtube-music\YouTube Music.exe
+			WinWait, ahk_exe YouTube Music.exe ahk_class Chrome_WidgetWin_1
+			WinActivate ahk_exe YouTube Music.exe ahk_class Chrome_WidgetWin_1
+		} else {
+			WinShow, ahk_exe YouTube Music.exe ahk_class Chrome_WidgetWin_1
+			WinWait, ahk_exe YouTube Music.exe ahk_class Chrome_WidgetWin_1
+			WinActivate ahk_exe YouTube Music.exe ahk_class Chrome_WidgetWin_1
+		}
+		Return
   Case "Terminal":
     IfWinNotExist, ahk_exe WindowsTerminal.exe
       Run, wt

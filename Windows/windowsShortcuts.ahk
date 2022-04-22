@@ -4,8 +4,8 @@
 ; Open GOG
 #g::win_applicationSwitcher("GogGalaxy")
 
-; Open Spotify
-#s::win_applicationSwitcher("Spotify")
+; Open Music Player
+#s::win_applicationSwitcher("YouTube Music")
 
 ;;;;;;;;;; Text Stuff ;;;;;;;;;;
 
