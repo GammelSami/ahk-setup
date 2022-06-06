@@ -40,6 +40,7 @@ Function Compress-Video {
     $outputFile = (Split-Path "$inputFile" -Parent) + '\' + $inputFileItem.Basename + $outputFileSuffix + '.mp4'
 
     # skip file if already processed (determined by name)
+		# todo: skip if output file already exists (fehler trat bei mario maker auf)
     if ($skipAlreadyProcessedFiles -eq 1) {
         if ($inputFileItem.Basename -match $outputFileSuffix -or
             $inputFileItem.Basename -match $inputFileSuffix -or
@@ -137,7 +138,7 @@ ForEach ($path in $args) {
     if (Test-Path -Path "$path" -PathType Container) {
 
         # recursively send full path of all video files in this directory to ffmpeg
-        gci "$path" -r -include "*.mp4","*.mkv","*.m4v" |
+        gci "$path" -r -include "*.mp4","*.mkv","*.m4v","*.MOV" |
             foreach-object { $a = $_.FullName; (Compress-Video "$a") }
     } else {
         Compress-Video "$path"
