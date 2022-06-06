@@ -17,9 +17,7 @@ exit
 :: define function
 :ffmpeg
 SETLOCAL
-ffmpeg -i "%~1" -map 0 -codec copy "%~2"
-:: delete or rename input files
-if /I "%delete_original_files%" EQU "1" (
-  del "%~1"
-)
+ffmpeg -i "%~1" -map 0 -codec copy -dn "%~2"
 ENDLOCAL :: end of function
+
+pause
