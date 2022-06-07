@@ -8,7 +8,11 @@ if [%1]==[] goto :eof
 
 if exist "%~1\*" ( :: if directory given
   pushd %1
-  for /R %%A in ("*.mp4","*.mkv","*.m4v") do CALL :compress "%%A" "%%~dnpA - COMPRESSED.mp4" :: recursive get files by extension
+	:: recursive get files by extension
+  for /R %%A in ("*.mp4") do CALL :compress "%%A" "%%~dnpA - COMPRESSED.mp4"
+	for /R %%A in ("*.mkv") do CALL :compress "%%A" "%%~dnpA - COMPRESSED.mp4"
+	for /R %%A in ("*.m4v") do CALL :compress "%%A" "%%~dnpA - COMPRESSED.mp4"
+	for /R %%A in ("*.mov") do CALL :compress "%%A" "%%~dnpA - COMPRESSED.mp4"
 ) else CALL :compress "%~1" "%~dpn1 - COMPRESSED.mp4"
 
 shift
