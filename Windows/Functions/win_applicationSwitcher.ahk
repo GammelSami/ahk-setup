@@ -40,9 +40,9 @@ win_applicationSwitcher(app) {
     WinActivate ahk_exe Discord.exe
     Return
   Case "WhatsApp":
-    IfWinNotExist, ahk_exe WhatsApp.exe
-      Run, %A_ScriptDir%\Setup\WhatsApp Desktop.lnk
-    WinActivate ahk_exe WhatsApp.exe
+    IfWinNotExist, ahk_exe ApplicationFrameHost.exe
+      Run, %A_ScriptDir%\Setup\WhatsApp.lnk
+    WinActivate ahk_exe ApplicationFrameHost.exe
     Return
   Case "PremierePro":
     IfWinNotExist, ahk_class Premiere Pro
