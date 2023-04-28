@@ -19,8 +19,10 @@
 <^>!.::Send, {U+2026}
 ;× with altgr and x
 <^>!x::Send, {U+00D7}
-;double dot with shift and numpad period
+;shift + numpad period = colon
 NumpadDel::Send, {U+003A}
+;ctrl + numpad period = dot
+^NumpadDot::Send, {U+002E}
 ;"almost equal to" with shift, altgr and +
 +<^>!+::Send, {U+2248}
 
