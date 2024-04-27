@@ -28,6 +28,9 @@ NumpadDel::Send, {U+003A}
 
 ;;;;;;;;;; G-Keys ;;;;;;;;;;
 
+; (G4) insert date
+F16::Send, %A_YYYY%-%A_MM%-%A_DD%
+
 ; (G6) Instant Application Switcher Windows Explorer
 F18::win_applicationSwitcher("Explorer")
 

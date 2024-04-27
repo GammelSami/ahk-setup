@@ -1,5 +1,16 @@
 #IfWinActive ahk_exe javaw.exe
 
+mcThirdPerson := 0
+
+*XButton2::
+if (mcThirdPerson == 0){
+  Send {F5}
+} else {
+  Send {F5}{F5}
+}
+mcThirdPerson := !mcThirdPerson
+return
+
 F17::
 Send {t}
 Sleep 50
