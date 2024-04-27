@@ -23,6 +23,8 @@ return
 
 F16::
 Send, {Ctrl Down}{W Down}
+Sleep, 50
+Send, {Ctrl Up}
 while GetKeyState("F16", "P")
 {
     Send {space down}
