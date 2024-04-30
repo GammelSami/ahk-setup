@@ -3,10 +3,10 @@
 mcThirdPerson := 0
 
 *XButton2::
-if (mcThirdPerson == 0){
-  Send {F5}
-} else {
+if (mcThirdPerson == 1){
   Send {F5}{F5}
+} else {
+  Send {F5}
 }
 mcThirdPerson := !mcThirdPerson
 return
