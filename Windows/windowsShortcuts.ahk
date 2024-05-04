@@ -27,6 +27,12 @@ NumpadDel::Send, {U+003A}
 +<^>!+::Send, {U+2248}
 ; Smiling Face with Tear emoji
 ::tear::{U+1F972}
+!^m::tooltip,
+
+; emojis
+::tear::{U+1F972} ; Smiling Face with Tear emoji 🥲
+::sob::{U+1F62D} ; ; Smiling Face with Tear emoji 😭
+
 
 ;;;;;;;;;; G-Keys ;;;;;;;;;;
 
