@@ -25,6 +25,8 @@ NumpadDel::Send, {U+003A}
 ^NumpadDot::Send, {U+002E}
 ;"almost equal to" with shift, altgr and +
 +<^>!+::Send, {U+2248}
+; Smiling Face with Tear emoji
+::tear::{U+1F972}
 
 ;;;;;;;;;; G-Keys ;;;;;;;;;;
 
